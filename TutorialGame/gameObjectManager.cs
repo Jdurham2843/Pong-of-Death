@@ -2,28 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 
 namespace TutorialGame
 {
     class gameObjectManager
     {
-        public PlayerPaddle playerPaddle = new PlayerPaddle();
-        public EnemyPaddle enemyPaddle = new EnemyPaddle();
-        public ball Ball = new ball();
+        public PlayerPaddle playerPaddle;
+        public EnemyPaddle enemyPaddle;
+        public ball Ball;
         public int playerScore;
         public int enemyScore;
 
         public gameObjectManager()
         {
-            playerPaddle.XValue = 0;
-            playerPaddle.YValue = 0;
-
-            enemyPaddle.XValue = 770;
-            enemyPaddle.YValue = 0;
-
-            Ball.XValue = 395;
-            Ball.YValue = 237;
+            playerPaddle = new PlayerPaddle(10);
+            enemyPaddle = new EnemyPaddle(10);
+            Ball = new ball(395, 237, 5, 0);
+           
 
             playerScore = 0;
             enemyScore = 0;

@@ -2,43 +2,37 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace TutorialGame
 {
     class ball: gameObject
     {
-        int xVelocity = 5;
-        int yVelocity = 3;
 
-        public int XVelocity
+        public ball(int p_xValue, int p_yValue, int p_xVelocity, int p_yVelocity)
         {
-            get {return xVelocity;}
-
-            set { xVelocity = value; }
+            xValue = p_xValue;
+            yValue = p_yValue;
+            xVelocity = p_xVelocity;
+            yVelocity = p_yVelocity;
+            rectangle = new Rectangle(xValue, yValue, 15, 15);
         }
-
-        public int YVelocity
+        public void moveAround(Paddle player, Paddle enemy)
         {
-            get { return yVelocity; }
-            set { yVelocity = value; }
-        }
-
-        public void moveAround()
-        {
-            if (yValue != 0 && yValue != 465)
+            if (rectangle.Y != 0 && rectangle.Y != 465)
             {
-                yValue += yVelocity;
-                xValue += xVelocity;
+                rectangle.Y += yVelocity;
+                rectangle.X += xVelocity;
             }
             else
             {
-                if (yValue == 0 || yValue == 465)
+                if (rectangle.Intersects(player.Rectangle) || rectangle.Intersects(enemy.Rectangle))
                 {
-                    yVelocity = -yVelocity;
-                    yValue += yVelocity;
+                    xVelocity = -xVelocity;
+                    rectangle.X += xVelocity;
                 }
 
-                if (xValue < 0 || xValue > 800)
+                if (rectangle.X < 0 || rectangle.X > 800)
                 {
                     resetBall();
                 }
@@ -53,8 +47,9 @@ namespace TutorialGame
 
         public void resetBall()
         {
-            xValue = 395;
-            yValue = 297;
+            rectangle.X = 395;
+            rectangle.Y = 297;
         }
+
     }
 }

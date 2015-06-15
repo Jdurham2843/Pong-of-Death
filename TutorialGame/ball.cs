@@ -24,19 +24,23 @@ namespace TutorialGame
                 rectangle.Y += yVelocity;
                 rectangle.X += xVelocity;
             }
-            else
+            else if (rectangle.Y <= 0 || rectangle.Y >= 465)
             {
-                if (rectangle.Intersects(player.Rectangle) || rectangle.Intersects(enemy.Rectangle))
-                {
-                    xVelocity = -xVelocity;
-                    rectangle.X += xVelocity;
-                }
-
-                if (rectangle.X < 0 || rectangle.X > 800)
-                {
-                    resetBall();
-                }
+                yVelocity = -yVelocity;
+                rectangle.Y += yVelocity;
+                rectangle.X += xVelocity;
             }
+
+            if (rectangle.Intersects(player.Rectangle) || rectangle.Intersects(enemy.Rectangle))
+            {
+                xVelocity = -xVelocity;
+            }
+        }
+
+        public void checkBounds()
+        {
+            if (rectangle.X < 0 || rectangle.X > 800)
+                resetBall();
         }
 
         public void changeXVelocity()

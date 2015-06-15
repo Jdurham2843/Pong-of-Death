@@ -21,7 +21,7 @@ namespace TutorialGame
         {
             playerPaddle = new PlayerPaddle(10);
             enemyPaddle = new EnemyPaddle(10);
-            Ball = new ball(395, 237, 5, 0);
+            Ball = new ball(395, 237, 9, 3);
            
 
             playerScore = 0;

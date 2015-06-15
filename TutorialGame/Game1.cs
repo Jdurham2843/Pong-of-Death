@@ -88,8 +88,9 @@ namespace TutorialGame
             GameObjectManager.playerPaddle.movePaddle();
             GameObjectManager.enemyPaddle.movePaddle();
             GameObjectManager.Ball.moveAround(GameObjectManager.playerPaddle, GameObjectManager.enemyPaddle);
+            GameObjectManager.Ball.checkBounds();
 
-            if (GameObjectManager.Ball.Rectangle.X == 30 && 
+            /*if (GameObjectManager.Ball.Rectangle.X == 30 && 
                 GameObjectManager.Ball.Rectangle.Y > GameObjectManager.playerPaddle.Rectangle.Y &&
                 GameObjectManager.Ball.Rectangle.Y < (GameObjectManager.playerPaddle.Rectangle.Y + 80))
             {
@@ -101,7 +102,7 @@ namespace TutorialGame
                 GameObjectManager.Ball.Rectangle.Y < (GameObjectManager.enemyPaddle.Rectangle.Y + 80))
             {
                 GameObjectManager.Ball.changeXVelocity();
-            }
+            }*/
 
             if (GameObjectManager.Ball.Rectangle.X == 0)
                 enemyScore++;

@@ -14,7 +14,7 @@ namespace TutorialGame
         
         public PlayerPaddle(int p_yVelocity)
         {
-            xValue = 0;
+            xValue = 50;
             yValue = 240;
             yVelocity = p_yVelocity;
             rectangle = new Rectangle(xValue, yValue, 30, 80);

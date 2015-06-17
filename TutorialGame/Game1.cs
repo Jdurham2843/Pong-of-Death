@@ -83,26 +83,14 @@ namespace TutorialGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            //Game Logic
 
             GameObjectManager.playerPaddle.movePaddle();
             GameObjectManager.enemyPaddle.movePaddle();
-            GameObjectManager.Ball.moveAround(GameObjectManager.playerPaddle, GameObjectManager.enemyPaddle);
+            GameObjectManager.Ball.moveAround(GameObjectManager.playerPaddle.Rectangle,
+                GameObjectManager.enemyPaddle.Rectangle, GameObjectManager.screenTop, GameObjectManager.screenBottom);
             GameObjectManager.Ball.checkBounds();
 
-            /*if (GameObjectManager.Ball.Rectangle.X == 30 && 
-                GameObjectManager.Ball.Rectangle.Y > GameObjectManager.playerPaddle.Rectangle.Y &&
-                GameObjectManager.Ball.Rectangle.Y < (GameObjectManager.playerPaddle.Rectangle.Y + 80))
-            {
-                GameObjectManager.Ball.changeXVelocity();
-            }
-
-            if (GameObjectManager.Ball.Rectangle.X == 770 &&
-                GameObjectManager.Ball.Rectangle.Y > GameObjectManager.enemyPaddle.Rectangle.Y &&
-                GameObjectManager.Ball.Rectangle.Y < (GameObjectManager.enemyPaddle.Rectangle.Y + 80))
-            {
-                GameObjectManager.Ball.changeXVelocity();
-            }*/
 
             if (GameObjectManager.Ball.Rectangle.X == 0)
                 enemyScore++;

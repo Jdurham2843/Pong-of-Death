@@ -17,24 +17,37 @@ namespace TutorialGame
             yVelocity = p_yVelocity;
             rectangle = new Rectangle(xValue, yValue, 15, 15);
         }
-        public void moveAround(Paddle player, Paddle enemy)
+        public void moveAround(Rectangle player, Rectangle enemy, Rectangle screenTop, Rectangle screenBottom)
         {
-            if (rectangle.Y != 0 && rectangle.Y != 465)
+            //checks for top/bottom frame collision
+            if (rectangle.Intersects(screenTop) || rectangle.Intersects(screenBottom))
             {
+                changeYVelocity();
                 rectangle.Y += yVelocity;
                 rectangle.X += xVelocity;
             }
-            else if (rectangle.Y <= 0 || rectangle.Y >= 465)
+            else 
             {
-                yVelocity = -yVelocity;
                 rectangle.Y += yVelocity;
                 rectangle.X += xVelocity;
             }
 
-            if (rectangle.Intersects(player.Rectangle) || rectangle.Intersects(enemy.Rectangle))
+            //checks for paddle collision
+            if (rectangle.Intersects(player) || rectangle.Intersects(enemy))
             {
-                xVelocity = -xVelocity;
+                changeXVelocity();
+                rectangle.Y += yVelocity;
+                rectangle.X += xVelocity;
             }
+            else
+            {
+                rectangle.Y += yVelocity;
+                rectangle.X += xVelocity;
+            }
+
+            
+
+
         }
 
         public void checkBounds()
@@ -46,7 +59,11 @@ namespace TutorialGame
         public void changeXVelocity()
         {
             xVelocity = -xVelocity;
-            xValue += xVelocity;
+        }
+
+        public void changeYVelocity()
+        {
+            yVelocity *= -1;
         }
 
         public void resetBall()

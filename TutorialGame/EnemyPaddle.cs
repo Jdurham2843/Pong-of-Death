@@ -13,7 +13,7 @@ namespace TutorialGame
         
         public EnemyPaddle(int p_yVelocity)
         {
-            xValue = 770;
+            xValue = 720;
             yValue = 240;
             yVelocity = p_yVelocity;
             rectangle = new Rectangle(xValue, yValue, 30, 80);

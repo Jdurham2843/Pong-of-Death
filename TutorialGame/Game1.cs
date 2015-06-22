@@ -87,16 +87,15 @@ namespace TutorialGame
 
             GameObjectManager.playerPaddle.movePaddle();
             GameObjectManager.enemyPaddle.movePaddle();
-            GameObjectManager.Ball.moveAround(GameObjectManager.playerPaddle.Rectangle,
-                GameObjectManager.enemyPaddle.Rectangle, GameObjectManager.screenTop, GameObjectManager.screenBottom);
-            GameObjectManager.Ball.checkBounds();
+            GameObjectManager.Ball.moveBall();
+            GameObjectManager.Ball.ballCollision(GameObjectManager.playerPaddle.Rectangle, GameObjectManager.playerPaddle.player);
+            GameObjectManager.Ball.ballCollision(GameObjectManager.enemyPaddle.Rectangle, GameObjectManager.enemyPaddle.player);
+            GameObjectManager.Ball.ballCollision(GameObjectManager.screenTop, 0);
+            GameObjectManager.Ball.ballCollision(GameObjectManager.screenBottom, 0);
+            GameObjectManager.Ball.checkBounds(ref playerScore, ref enemyScore);
 
-
-            if (GameObjectManager.Ball.Rectangle.X == 0)
-                enemyScore++;
-
-            if (GameObjectManager.Ball.Rectangle.X == 800)
-                playerScore++;
+            
+            
 
             base.Update(gameTime);
         }

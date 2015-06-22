@@ -12,7 +12,7 @@ namespace TutorialGame
     {
 
         
-        public PlayerPaddle(int p_yVelocity)
+        public PlayerPaddle(double p_yVelocity)
         {
             xValue = 50;
             yValue = 240;
@@ -25,12 +25,12 @@ namespace TutorialGame
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 if (rectangle.Y != 0)
-                    rectangle.Y -= yVelocity;
+                    rectangle.Y -= (int)yVelocity;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 if (rectangle.Y != 400)
-                    rectangle.Y += yVelocity;
+                    rectangle.Y += (int)yVelocity;
             }
         }
     }

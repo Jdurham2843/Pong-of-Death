@@ -21,11 +21,11 @@ namespace TutorialGame
 
         public gameObjectManager()
         {
-            playerPaddle = new PlayerPaddle(10);
-            enemyPaddle = new EnemyPaddle(10);
-            Ball = new ball(395, 237, 5, 3);
-            screenTop = new Rectangle(0, -10, 800, 10);
-            screenBottom = new Rectangle(0, 480, 800, 10);
+            playerPaddle = new PlayerPaddle(10.0);
+            enemyPaddle = new EnemyPaddle(10.0);
+            Ball = new ball(395, 237);
+            screenTop = new Rectangle(0, -5, 800, 5);
+            screenBottom = new Rectangle(0, 480, 800, 5);
            
 
             playerScore = 0;

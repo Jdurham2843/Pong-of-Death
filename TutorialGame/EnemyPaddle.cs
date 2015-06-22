@@ -11,7 +11,7 @@ namespace TutorialGame
     class EnemyPaddle : Paddle
     {
         
-        public EnemyPaddle(int p_yVelocity)
+        public EnemyPaddle(double p_yVelocity)
         {
             xValue = 720;
             yValue = 240;
@@ -24,12 +24,12 @@ namespace TutorialGame
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {
                 if (rectangle.Y != 0)
-                    rectangle.Y -= yVelocity;
+                    rectangle.Y -= (int)yVelocity;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
                 if (rectangle.Y != 400)
-                    rectangle.Y += yVelocity;
+                    rectangle.Y += (int)yVelocity;
             }
         }
     }

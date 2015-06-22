@@ -14,8 +14,8 @@ namespace TutorialGame
         protected int xValue;
         protected int yValue;
         protected Rectangle rectangle;
-        protected int xVelocity;
-        protected int yVelocity;
+        protected double xVelocity;
+        protected double yVelocity;
 
         public int XValue
         {
@@ -31,13 +31,13 @@ namespace TutorialGame
             set { yValue = value; }
         }
 
-        public int XVelocity
+        public double XVelocity
         {
             get { return xVelocity; }
             set { xVelocity = value; }
         }
 
-        public int YVelocity
+        public double YVelocity
         {
             get { return yVelocity; }
             set { yVelocity = value; }

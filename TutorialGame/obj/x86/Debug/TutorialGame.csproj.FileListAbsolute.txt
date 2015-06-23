@@ -56,3 +56,6 @@ C:\Users\John\Documents\MonoGameStuff\TutorialGame\TutorialGame\bin\Windows\Debu
 C:\Users\John\Documents\MonoGameStuff\TutorialGame\TutorialGame\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\John\Documents\MonoGameStuff\TutorialGame\TutorialGame\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\John\Documents\MonoGameStuff\TutorialGame\TutorialGame\obj\x86\Debug\TutorialGame.csprojResolveAssemblyReference.cache
+C:\Users\John\Documents\MonoGameStuff\TutorialGame\TutorialGame\bin\Windows\Debug\Content\PongSplashScreen.png
+C:\Users\John\Documents\MonoGameStuff\TutorialGame\TutorialGame\bin\Windows\Debug\Content\PongMenu1.png
+C:\Users\John\Documents\MonoGameStuff\TutorialGame\TutorialGame\bin\Windows\Debug\Content\PongMenu2.png

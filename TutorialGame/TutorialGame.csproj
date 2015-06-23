@@ -43,10 +43,12 @@
     <Compile Include="Game1.cs" />
     <Compile Include="gameObject.cs" />
     <Compile Include="gameObjectManager.cs" />
+    <Compile Include="GameScreen.cs" />
     <Compile Include="paddle.cs" />
     <Compile Include="PlayerPaddle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -61,6 +63,15 @@
     </Content>
     <Content Include="Content\paddle.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PongMenu1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PongMenu2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PongSplashScreen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\SplashScreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
